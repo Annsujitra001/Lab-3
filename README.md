@@ -39,7 +39,41 @@ Lab 3: Machine Learning สำหรับการจำแนกการใ�
    						> NDBI (Normalized Difference Built-up Index)
     			เหตุผลในการเลือก Feature คือ การรวม spectral bands กับ indices ช่วยเพิ่มความสามารถของโมเดลในการแยกประเภทพื้นที่ที่มีลักษณะคล้ายกัน
 
+2. เปรียบเทียบอัลกอริทึม Random Forest and SVM
 
+   		เพื่อเปรียบเทียบประสิทธิภาพของอัลกอริทึมการจำแนกข้อมูล ได้แก่ Random Forest และ Support Vector Machine (SVM) ในการจำแนกประเภทการใช้ประโยชน์ที่ดิน โดยใช้ข้อมูลจาก Sentinel-2 และ WorldCover
+   		Methodology
+   			1. Data Preparation
+   					> ใช้ข้อมูล Sentinel-2 bands และคำนวณดัชนี NDVI, NDWI, NDBI
+					> ใช้ WorldCover เป็น reference data
+   					> สร้าง training และ validation dataset
+
+			2. Classification Algorithms
+					ทดลอง 3 โมเดล:
+						> Random Forest (50 trees)
+   						> Random Forest (100 trees)
+						> Support Vector Machine (SVM)
+
+			3. Accuracy Assessment
+					ใช้ confusion matrix และคำนวณค่าต่อไปนี้:
+						> Overall Accuracy (OA)
+   						> Kappa Coefficient
+						> Producer’s Accuracy (Recall)
+   						> User’s Accuracy (Precision)
+   						> F1-score (ราย class)
+			        Results:
+					Overall Performance
+						Model	    OA	      Kappa
+						RF 50		0.997	  0.996
+						RF 100		0.997	  0.996
+						SVM			0.986	  0.981
+					Discussion:
+						> Random Forest ให้ผลลัพธ์ดีและเสถียรกว่า
+   						> การเพิ่มจำนวนต้นไม้ช่วยเพิ่มความแม่นยำเล็กน้อย
+						> SVM มีประสิทธิภาพดีในบาง class แต่ไม่สม่ำเสมอ
+
+					Conclusion:
+						Random Forest (100 trees) ให้ผลดีที่สุดโดยรวม เนื่องจากมีค่า OA และ F1-score สูงกว่า SVM
 
 
 
