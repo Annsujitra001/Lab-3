@@ -106,6 +106,17 @@ Lab 3: Machine Learning สำหรับการจำแนกการใ�
 					> ใช้ feature เพิ่ม 
 					> รวม class ที่คล้ายกัน (merge class) 
 					> ใช้ข้อมูลหลายช่วงเวลา (multi-temporal)
+		4. ถ้าต้องทำซ้ำ Lab นี้สำหรับพื้นที่อื่น อะไรคือสิ่งที่ต้องเปลี่ยน และอะไรที่ใช้ซ้ำได้?
+				ต้องเปลี่ยน
+					> พื้นที่ศึกษา (ROI) 
+					> Training data (ต้องเก็บใหม่) 
+					> อาจต้องปรับ class ให้เหมาะกับพื้นที่ 
+ 				ใช้ซ้ำได้
+					> โค้ด preprocessing 
+					> วิธีสร้าง feature (NDVI, NDWI, etc.) 
+					> โมเดล Random Forest 
+					> วิธีประเมิน (Confusion Matrix, Accuracy)
+
 					
 
 
